@@ -1,7 +1,23 @@
 package proyecto_Concesionario;
 
+import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Vehiculos {
+
+public class Vehiculos implements comparar {
+    //Creado por César Eduardo Silva Colocho
+    // Metodo Interface comparar calidad de marcas
+    public void compararCalidadMarcas(){
+        int Honda=5000;
+        int Mazda=3000;
+        if (Honda>Mazda){
+            System.out.println("La marca Honda es mas popular");
+        }else{
+            System.out.println("La marca Mazda es mas popular"); 
+        }
+    }    
+    
+    
     
     //Atributos de la clase
     private String nombre;
@@ -18,7 +34,7 @@ public class Vehiculos {
     private double codigo;
 
     //Metodo constructor
-    public Vehiculos(String modelo, String marca, String color, String placa, int anho, double kilometraje, double precio, char estado, char tipovehiculo,int cantidad,double codigo,String nombre) {
+    public Vehiculos(String modelo, String marca, String color, String placa, String nombre, int anho, double kilometraje, double precio, char estado, char tipovehiculo,int cantidad,double codigo) {
         this.modelo = modelo;
         this.marca = marca;
         this.color = color;
@@ -31,7 +47,11 @@ public class Vehiculos {
         this.cantidad = cantidad;
         this.codigo = codigo;  
     }
-    
+
+    public Vehiculos(){
+        
+    }
+     
     //Encapsulamiento
     public void setModelo (String _modelo) //Metodo "set" sirve para colocar el dato que manda el usuario.
     {
@@ -163,7 +183,26 @@ public class Vehiculos {
         }else{
             System.out.println("No hay existencias se nesesita producto"); 
         } 
-    }       
+    }
+    // metodo para ventas totales
+    //Jefferson Javier Avelar Arriaza
+    public void ventatotales () {
+        ArrayList ventas = new ArrayList();
+        ventas.add(30000);
+        ventas.add(50000);
+        ventas.add(25000);
+        ventas.add(10000);
+        ventas.add(800);
+        int promedio = 0;
+        int suma=0;
+        System.out.println("Sus Ventas son: $"+ventas.toString());
+        for (Object num:ventas)suma+=(int)num;
+        System.out.println("Las ventas totales son: $"+suma);
+        for(Object num : ventas)promedio+=(int)num;
+        promedio/=ventas.size();
+        System.out.println("El promedio de sus ventas son: $"+promedio);
+    }
+  
 }
     
 

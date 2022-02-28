@@ -1,7 +1,11 @@
 package proyecto_Concesionario;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class inventario_Empleados {
+
     //Atributos de la clase 
     private String nombre;
     private String apellido;
@@ -22,6 +26,10 @@ public class inventario_Empleados {
         this.ventas = ventas;
         this.total_vendido = total_Vendido;
         this.codigo=codigo;
+    }
+
+    public inventario_Empleados() {
+        
     }
     
     //Encapsulamiento
@@ -122,5 +130,38 @@ public class inventario_Empleados {
             System.out.println("No hay ventas"); 
         } 
     }
-    
+    //Arreglo para mostrar datos personales del empleado
+    public void empleado(){
+        ArrayList informacionEmpleado = new ArrayList();
+        informacionEmpleado.add("Fernano");
+        informacionEmpleado.add("Salguero");
+        informacionEmpleado.add("17/07/2001");
+        informacionEmpleado.add("20");
+        informacionEmpleado.add("Empleado tiempo Completo"); 
+        System.out.println("Informacion del empleado es: "+informacionEmpleado);
+    }
+    //metodo de busqueda secuencial
+    //Jefferson Javier Avelar Arriaza
+    public  void busquedaSecuencial(){
+        ArrayList busqueda = new ArrayList();
+        busqueda.add(800);
+        busqueda.add(10000);
+        busqueda.add(25000);
+        busqueda.add(50000);
+        busqueda.add(30000);
+        Scanner dato = new Scanner(System.in);
+        System.out.print("Buscar venta: ");
+        Object lim = dato.nextInt();
+        int posicion = 0;
+        for(int i = 0; i < busqueda.size(); i++){//recorremos todo el arreglo
+            if(busqueda.get(i) == lim){
+                posicion = i;//Si es verdadero guardamos la posicion
+                break;//Para el ciclo
+            
+            }//comparamos el elemento en el arreglo con el buscado         
+            
+        }
+        System.out.println("El dato esta en la posicion: "+posicion);
+    }
+
 }

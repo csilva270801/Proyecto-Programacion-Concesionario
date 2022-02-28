@@ -1,7 +1,9 @@
 package proyecto_Concesionario;
 
+import javax.swing.JOptionPane;
 
-public class inventario_Cliente { 
+
+public class inventario_Cliente {
     //Atributos de la clase
     private String nombres;
     private String apellidos;
@@ -118,4 +120,5 @@ public class inventario_Cliente {
         }
   
     }
+    
 }
