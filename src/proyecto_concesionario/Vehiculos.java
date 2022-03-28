@@ -1,57 +1,35 @@
-package proyecto_Concesionario;
+package proyecto_concesionario;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class Vehiculos implements comparar {
-    //Creado por César Eduardo Silva Colocho
-    // Metodo Interface comparar calidad de marcas
-    public void compararCalidadMarcas(){
-        int Honda=5000;
-        int Mazda=3000;
-        if (Honda>Mazda){
-            System.out.println("La marca Honda es mas popular");
-        }else{
-            System.out.println("La marca Mazda es mas popular"); 
-        }
-    }    
-    
-    
-    
+public class Vehiculos   {  
     //Atributos de la clase
     private String nombre;
     private String modelo;
     private String marca;
     private String color;
-    private String placa;
     private int anho;
     private double kilometraje;
     private double precio;
-    private char estado;
-    private char tipovehiculo;
+    private String estado;
+    private String tipovehiculo;
     private int cantidad;
-    private double codigo;
 
     //Metodo constructor
-    public Vehiculos(String modelo, String marca, String color, String placa, String nombre, int anho, double kilometraje, double precio, char estado, char tipovehiculo,int cantidad,double codigo) {
-        this.modelo = modelo;
-        this.marca = marca;
-        this.color = color;
-        this.placa = placa;
-        this.anho = anho;
-        this.kilometraje = kilometraje;
-        this.precio = precio;
-        this.estado = estado;
-        this.tipovehiculo = tipovehiculo;
-        this.cantidad = cantidad;
-        this.codigo = codigo;  
-    }
-
-    public Vehiculos(){
-        
-    }
-     
+    public Vehiculos(String _modelo, String _marca, String _color, String _nombre, int _anho, double _kilometraje, double _precio, String _estado, String _tipovehiculo,int _cantidad) {
+        this.modelo = _modelo;
+        this.marca = _marca;
+        this.color = _color;
+        this.anho = _anho;
+        this.kilometraje = _kilometraje;
+        this.precio = _precio;
+        this.estado = _estado;
+        this.tipovehiculo = _tipovehiculo;
+        this.cantidad = _cantidad;
+        this.nombre= _nombre;
+    } 
     //Encapsulamiento
     public void setModelo (String _modelo) //Metodo "set" sirve para colocar el dato que manda el usuario.
     {
@@ -76,14 +54,6 @@ public class Vehiculos implements comparar {
     {
        return this.cantidad;
     }
-    public void setCodigo(double _codigo) //Metodo "set" muestra codigo 
-    {
-      this.codigo= _codigo;  
-    }
-    public double getCodigo(){ //Metodo "get" muestra codigo
-        return this.codigo;
-    }
-    
     
     public void setMarca (String _marca) //Metodo "set" muestra marca
     {
@@ -103,16 +73,6 @@ public class Vehiculos implements comparar {
     public String getColor() //Metodo "get" muestra color
     {
         return this.color;
-    }
-    
-    public void setPlaca (String _placa) //Metodo "set" muestra placa
-    {
-     this.placa = _placa;
-    }
-    
-    public String getPlaca() //Metodo "get" muestra placa
-    {
-        return this.placa;
     }
     
     public void setAnho (int _anho) //Metodo "set" muestra año
@@ -145,22 +105,22 @@ public class Vehiculos implements comparar {
         return this.precio;
     }
     
-    public void setEstado (char _estado) //Metodo "set" muestra estado
+    public void setEstado (String _estado) //Metodo "set" muestra estado
     {
      this.estado = _estado;
     }
     
-    public char getEstado() //Metodo "get" muestra estado
+    public String getEstado() //Metodo "get" muestra estado
     {
         return this.estado;
     }
     
-    public void setTipovehiculo(char _tipovehiculo) //Metodo "set" muestra tipo vehiculo
+    public void setTipovehiculo(String tipovehiculo) //Metodo "set" muestra tipo vehiculo
     {
-     this.tipovehiculo = _tipovehiculo;
+     this.tipovehiculo = tipovehiculo;
     }
     
-    public char getTipovehiculo() //Metodo "get" muestra tipo vehiculo
+    public String getTipovehiculo() //Metodo "get" muestra tipo vehiculo
     {
         return this.tipovehiculo;
     }
@@ -202,6 +162,12 @@ public class Vehiculos implements comparar {
         promedio/=ventas.size();
         System.out.println("El promedio de sus ventas son: $"+promedio);
     }
+    
+    public Vehiculos()
+    {
+        
+    }
+    
   
 }
     

@@ -1,8 +1,7 @@
-package proyecto_Concesionario;
+package proyecto_concesionario;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import javax.swing.JOptionPane;
 
 public class inventario_Empleados {
 
@@ -13,24 +12,33 @@ public class inventario_Empleados {
     private String fechaventa;
     private int edad;
     private int ventas;
-    private double total_vendido;
     private double codigo;
+    private double sueldo;
 
     //Metodo constructor
-    public inventario_Empleados(String nombre, String apellido, String dui, String fechaventa, int edad, int ventas, double total_Vendido,double codigo) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dui = dui;
-        this.fechaventa = fechaventa;
-        this.edad = edad;
-        this.ventas = ventas;
-        this.total_vendido = total_Vendido;
-        this.codigo=codigo;
+    public inventario_Empleados(String _nombre, String _apellido, String _dui, String _fechaventa, int _edad, int _ventas,double _codigo,double _sueldo) {
+        this.nombre = _nombre;
+        this.apellido = _apellido;
+        this.dui = _dui;
+        this.fechaventa = _fechaventa;
+        this.edad = _edad;
+        this.ventas = _ventas;
+        this.codigo= _codigo;
+        this.sueldo= _sueldo;
     }
 
     public inventario_Empleados() {
         
     }
+
+    public double getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(double _sueldo) {
+        this.sueldo = _sueldo;
+    }
+    
     
     //Encapsulamiento
     public void setNombre (String _nombre) //Metodo "set" sirve para colocar el dato que manda el usuario.
@@ -99,16 +107,6 @@ public class inventario_Empleados {
     public int getVentas() //Metodo "get" muestra ventas
     {
      return this.ventas;
-    }
-    
-    public void setTotal_vendido (double _total_vendido) //Metodo "set" muestra total vendido
-    {
-     this.total_vendido = _total_vendido;   
-    }
-    
-    public double getTotal_vendido() //Metodo "get" total vendido
-    {
-     return this.total_vendido;
     }
     
     //Metodo ventas

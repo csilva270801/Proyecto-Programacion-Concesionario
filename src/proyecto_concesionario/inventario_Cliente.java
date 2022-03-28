@@ -1,8 +1,4 @@
-package proyecto_Concesionario;
-
-import javax.swing.JOptionPane;
-
-
+package proyecto_concesionario;
 public class inventario_Cliente {
     //Atributos de la clase
     private String nombres;
@@ -10,12 +6,13 @@ public class inventario_Cliente {
     private String correo;
     private String dui;
     private String fechaCompra;
-    private char pago;
+    private String pago;
     private int vehivulos_Comprados;
     private double codigo_producto;
+    private double compras_totales;
     
     //Metodo constructor
-    public inventario_Cliente(String nombres, String apellidos, String correo, String dui, String fechaCompra, int vehivulos_Comprados, char pago,double codigo_producto) {
+    public inventario_Cliente(String nombres, String apellidos, String correo, String dui, String fechaCompra, int vehivulos_Comprados, String pago,double codigo_producto, double compras_totales) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
@@ -24,12 +21,33 @@ public class inventario_Cliente {
         this.pago = pago;
         this.vehivulos_Comprados = vehivulos_Comprados;
         this.codigo_producto= codigo_producto;
+        this.compras_totales= compras_totales;
+    }
+    public inventario_Cliente()
+    {
+        
     }
     
     //Encapsulamiento
     public void setNombres (String _nombres) //Metodo "set" sirve para colocar el dato que manda el usuario.
     {
      this.nombres = _nombres;
+    }
+
+    public String getFechaCompra() { //Metodo "get" mostramos dato ingresado
+        return fechaCompra;
+    }
+
+    public void setFechaCompra(String fechaCompra) { //Metodo "Set" mostramos fechaCompra
+        this.fechaCompra = fechaCompra;
+    }
+
+    public double getCompras_totales() { //Metodo "get" moostramos el dato ingresado
+        return compras_totales;
+    }
+
+    public void setCompras_totales(double compras_totales) { //Metodo "set" coloca las compras totales
+        this.compras_totales = compras_totales;
     }
     
     public String getNombres() //Metodo "get" mostramos el dato ingresado.
@@ -95,15 +113,16 @@ public class inventario_Cliente {
      return this.fechaCompra;
     }
     
-    public void setPago (char _pago) //Metodo "set" coloca pago
+    public void setPago (String _pago) //Metodo "set" coloca pago
     {
      this.pago = _pago;
     }
     
-    public char getPago() //Metodo "get" muestra pago
+    public String getPago() //Metodo "get" muestra pago
     {
      return this.pago;
     }
+    
     
     //Metodo tipoCliente
     public void tipocliente (int _vehivulos_Comprados)

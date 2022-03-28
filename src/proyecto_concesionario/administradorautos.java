@@ -2,8 +2,8 @@ package proyecto_concesionario;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import proyecto_Concesionario.inventario_Empleados;
-import proyecto_Concesionario.Vehiculos;
+import proyecto_concesionario.inventario_Empleados;
+import proyecto_concesionario.Vehiculos;
 
 
 /**
@@ -120,7 +120,7 @@ public class administradorautos {
                  break;
               // en el caso G lo que asemos es la variable terminar la ponemos en true para que finalice y el break para que para el while  
              case 'G':
-                 ventas.compararCalidadMarcas();
+                // ventas.compararCalidadMarcas();
                  break;
              case 'H':
                terminar=true;
