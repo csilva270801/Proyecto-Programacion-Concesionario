@@ -1,5 +1,5 @@
 package proyecto_concesionario;
-public class inventario_Cliente {
+public  class  inventario_Cliente {
     //Atributos de la clase
     private String nombres;
     private String apellidos;
@@ -127,6 +127,7 @@ public class inventario_Cliente {
     //Metodo tipoCliente
     public void tipocliente (int _vehivulos_Comprados)
     {
+        
         double cantidad_veiculos=_vehivulos_Comprados;
        if (cantidad_veiculos>=4){
             System.out.println("Cliente de altisimo volumen de compra ");
@@ -138,6 +139,12 @@ public class inventario_Cliente {
           System.out.println("Cliente con volumen de compra promedio");
         }
   
+    }
+    public void imprimircliente()
+    {
+        System.out.println("Nombre:"+nombres+" "+"Apellidos: "+apellidos);
+        System.out.println("Correo:"+correo+" "+"Dui: "+dui+" "+"Fecha compra: "+fechaCompra+" "+"Pago:"+pago);
+        System.out.println("Total vehiculos comprados: "+vehivulos_Comprados+"Codigo del producto: "+codigo_producto+"Compras totales "+compras_totales);
     }
     
 }

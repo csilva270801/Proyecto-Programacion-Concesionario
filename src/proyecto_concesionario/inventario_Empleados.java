@@ -134,7 +134,7 @@ public class inventario_Empleados {
         informacionEmpleado.add("Fernano");
         informacionEmpleado.add("Salguero");
         informacionEmpleado.add("17/07/2001");
-        informacionEmpleado.add("20");
+        informacionEmpleado.add(20);
         informacionEmpleado.add("Empleado tiempo Completo"); 
         System.out.println("Informacion del empleado es: "+informacionEmpleado);
     }

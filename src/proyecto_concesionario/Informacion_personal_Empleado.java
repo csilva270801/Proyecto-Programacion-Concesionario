@@ -1,6 +1,8 @@
 
 package proyecto_concesionario;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jefferson Javier Avelar Arriaza
@@ -90,5 +92,4 @@ public class Informacion_personal_Empleado extends inventario_Empleados
         double pesooptimo;
         pesooptimo=altura*(peso*peso);
     }
-    
 }

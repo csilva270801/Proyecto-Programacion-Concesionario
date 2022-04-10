@@ -9,7 +9,7 @@ public class Vehiculos   {
     private String nombre;
     private String modelo;
     private String marca;
-    private String color;
+    private String color;  
     private int anho;
     private double kilometraje;
     private double precio;
@@ -146,21 +146,8 @@ public class Vehiculos   {
     }
     // metodo para ventas totales
     //Jefferson Javier Avelar Arriaza
-    public void ventatotales () {
-        ArrayList ventas = new ArrayList();
-        ventas.add(30000);
-        ventas.add(50000);
-        ventas.add(25000);
-        ventas.add(10000);
-        ventas.add(800);
-        int promedio = 0;
-        int suma=0;
-        System.out.println("Sus Ventas son: $"+ventas.toString());
-        for (Object num:ventas)suma+=(int)num;
-        System.out.println("Las ventas totales son: $"+suma);
-        for(Object num : ventas)promedio+=(int)num;
-        promedio/=ventas.size();
-        System.out.println("El promedio de sus ventas son: $"+promedio);
+    public void ventatotales (){
+        
     }
     
     public Vehiculos()
@@ -168,7 +155,7 @@ public class Vehiculos   {
         
     }
     
-  
+
 }
     
 

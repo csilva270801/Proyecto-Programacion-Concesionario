@@ -2,7 +2,7 @@ package proyecto_concesionario;
 
 /**
  *
- * @author Cesar Eduardo Silva Colocho
+ * @author cescl
  */
 public class descuento_Cliente extends inventario_Cliente {
     
@@ -90,7 +90,15 @@ public class descuento_Cliente extends inventario_Cliente {
                         System.out.println("Felicidades! por tus compras, has ganado un canjeable de $500 dolares en nuestra tienda!");
                     }
                 }
-            }
+            } 
         }
     }
+    @Override
+    public void imprimircliente()
+    {
+        
+        System.out.println("Tipo de pago: "+tipo_pago+" "+"con un descuento: "+descuento+"Con cupones"+cupones);
+    }
+    
 }
+

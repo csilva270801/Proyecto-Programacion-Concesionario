@@ -1,6 +1,8 @@
 
 package proyecto_concesionario;
 
+import java.util.ArrayList;
+
 
 /**
  *
@@ -26,6 +28,10 @@ public class Motos extends Vehiculos
     // Invoca al metodo constructor de la clase padre Vehiculos
     public Motos(){
         super("Deportiva","Kawasaki","roja","300",2021,50,2500,"Nuevo","Moto",40); 
+    }
+
+    Motos(String motor, double d) {
+        
     }
   // metodo emcapsulador
     public double getIdmoto() { //Metodo get para mostrar el idmoto
@@ -82,7 +88,7 @@ public class Motos extends Vehiculos
             System.out.println("El peso ejercido en la "+this.getTipovehiculo()+" No esta en los limites que son de "+this.getPesomaximo()+"KG");
         }
     }
-    public void tipomoto()
+    public void tipo_moto()
     {
         if("Deportiva".equals(this.getModelo())){
             System.out.println("Este tipo "+this.getModelo()+" tiene funciones a mejor y más rápida aceleración, el mejor y más veloz paso por curva, la mayor estabilidad, la mejor frenada y la mayor agilidad y cuentan con un motor "+this.getTipomotor());
@@ -93,6 +99,21 @@ public class Motos extends Vehiculos
         }
 
     }
-     
-    
+    @Override
+    public void ventatotales()
+    {
+        ArrayList motos = new ArrayList();
+        motos.add(1500);
+        motos.add(5000);
+        motos.add(2500);
+        motos.add(600);
+        int promedio = 0;
+        int suma=0;
+        System.out.println("Sus Ventas son: $"+motos.toString());
+        for (Object num:motos)suma+=(int)num;
+        System.out.println("Las ventas totales son: $"+suma);
+        for(Object num : motos)promedio+=(int)num;
+        promedio/=motos.size();
+        System.out.println("El promedio de sus ventas de motos son: $"+promedio); 
+    }
 }

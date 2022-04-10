@@ -15,18 +15,41 @@ public class administradorautos {
     public static void main(String[] args) 
     {  //llamar metodo del menu
         interfazmenu menuagregar=new interfazmenu ();
-       // llamar al metodo informacionEmpleado
-      inventario_Empleados infopersonal=new inventario_Empleados();
+        // instanciar la clase inventario_Empleados
+        inventario_Empleados infopersonal=new inventario_Empleados();
+        //instanciar la clase inventario_Cliente
+        inventario_Cliente clientes= new inventario_Cliente();
+        //instanciar la clase Vehiculos
+        Vehiculos ventas = new Vehiculos();
+        //crear arreglo de tipo objeto 
+        //inventario_Empleados datosempleados[]= new inventario_Empleados[0];
+        //datosempleados[0]=  new Informacion_personal_Empleado();
+
+       //Informacion_personal_Empleado Informacion_personal_Empleadosss = new Informacion_personal_Empleado();
+       Motos objmotos= new Motos();
+       //variables polimorficas
+       Carros objcarros= new Carros();
+       Vehiculos objdatos[]=new Vehiculos[1];
+       objdatos[0]=objcarros;
+       objdatos[1]=objmotos;
+       objdatos[0].ventatotales();
+       objdatos[1].ventatotales();
+      // cast 
+       Vehiculos conver=(Vehiculos)objdatos[0];
+       
       //inicializar el metodo
       infopersonal.empleado();
       System.out.println("--------------------------------------------------------------------------------------------");
       //llamar al metodo ventas totales el cual trae consigo la suma total y el promedio de las ventas
-      Vehiculos ventas = new Vehiculos();
+     
       //iniciarlizar el metodo ventatotales que nos da la suma de ventas y el promedio
-      ventas.ventatotales();
+      ventas.ventatotales(); 
       
+
+       
      // Arreglo
      Scanner entrada = new Scanner(System.in);
+     Scanner c = new Scanner(System.in);
      int nuevasventas;
      //creamos el arreglo
      double[] arreglo={10000,800,25000,50000,30000};
@@ -63,7 +86,9 @@ public class administradorautos {
          System.out.println("E- Busqueda Secuencial");
          System.out.println("F- Menu Agregar nuevas Ventas");
          System.out.println("G- Comparar Marcas");
-         System.out.println("H- Salir");
+         System.out.println("H- Tipos de clientes");
+         System.out.println("I-Ingresar informacion personal empleado");
+         System.out.println("J- Salir");
          respuesta=ent.next().charAt(0);
         // el swich ocupara la respuesta que mando el usuario y va inicializar la opcion
         switch(respuesta){
@@ -122,7 +147,41 @@ public class administradorautos {
              case 'G':
                 // ventas.compararCalidadMarcas();
                  break;
-             case 'H':
+                 case 'H':
+                     int vehiculoscomprados;
+                     System.out.println("Ingrese las nuevas ventas");
+                     vehiculoscomprados= entrada.nextInt();
+                     clientes.tipocliente(vehiculoscomprados);
+                     
+                 break;
+                  case 'I':
+                      double Peso;
+                      double estatura;
+                      String domicilio;
+                      double distancia_casa_trabajo;
+                      String estado;
+                        System.out.println("Ingrese el peso");
+                        Peso= entrada.nextDouble();
+                        System.out.println("Ingrese la estatura");
+                        estatura= entrada.nextDouble();
+                        System.out.println("Ingrese el domicilio");
+                        domicilio= c.next();
+                        System.out.println("Ingrese el La distancia de la casa al trabajo");
+                        distancia_casa_trabajo= entrada.nextDouble();
+                        System.out.println("Ingrese el estado");
+                        estado= entrada.next();
+                        //Informacion_personal_Empleado datosempleados[]=new Informacion_personal_Empleado[0];
+                        
+                        
+                        //variable polimorfica
+                        Informacion_personal_Empleado datosempleado[]= new Informacion_personal_Empleado[1];
+                        datosempleado[0]=new Informacion_personal_Empleado (Peso,estatura,domicilio,distancia_casa_trabajo,estado) ;
+                        //datosempleado[1].empleado();
+                        //cast
+                        System.out.println("Arreglo de un objeto= "+"[ "+"Peso: "+(int)datosempleado[0].getPeso()+", "+"Estatura: "+(int)datosempleado[0].getEstatura()+", "+"Domicilio: "+datosempleado[0].getDomicilio()+", "+"Distancia: "+(float)datosempleado[0].getDistancia_casa_trabajo()+", "+"Estado: "+datosempleado[0].getEstado()+" ]");
+                      
+                        break;
+             case 'J':
                terminar=true;
                break;
                
@@ -161,7 +220,7 @@ public class administradorautos {
         bajo = 0;
         alto = arreglo.length-1;
         while(bajo<=alto)
-        {
+        { 
         central = (bajo + alto)/2;
         valorCentral = (int) arreglo[central];
         if(n == valorCentral) return central;

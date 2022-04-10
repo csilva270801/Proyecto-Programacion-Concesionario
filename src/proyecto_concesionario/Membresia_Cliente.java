@@ -2,7 +2,7 @@ package proyecto_concesionario;
 
 /**
  *
- * @author Cesar Eduardo Silva Colocho
+ * @author cescl
  */
 public class Membresia_Cliente extends inventario_Cliente {
     
@@ -71,7 +71,7 @@ public class Membresia_Cliente extends inventario_Cliente {
         this.expiracion = expiracion;
     }
     
-    //Metodos
+    
     
     public void membresia()    
             
@@ -102,5 +102,32 @@ public class Membresia_Cliente extends inventario_Cliente {
         if(frecuencia_Compras < expiracion){
             System.out.println("Usted "+this.getNombres()+" "+this.getApellidos()+"con DUI"+this.getDui()+"y correo"+this.getCorreo()+"por sus bajos ingresos, lastimosamente ah perdido su membresia");
         }
+    }
+    @Override
+    public void tipocliente (int _vehivulos_Comprados)
+    {
+        int vehiculos= _vehivulos_Comprados;
+        if(vehiculos <= 3 && vehiculos  > 4)
+      {     
+        System.out.println("por sus compras de"+this.getVehivulos_Comprados()+"ah logrado obtener: "+this.membresia_Gold+" la cual contiene muchos Benenficios!");
+      }
+      
+      else if(vehiculos >= 2 && vehiculos <= 3)     
+      {
+        System.out.println("por sus compras de"+this.getVehivulos_Comprados()+"ah logrado obtener: "+this.membresia_Platinum+" la cual contiene muchos Benenficios!");         
+      }
+      
+      else if(vehiculos == 1)
+      {
+        System.out.println("por sus compras de"+this.getVehivulos_Comprados()+"ah logrado obtener: "+this.membresia_Bronze+" la cual contiene muchos Benenficios!");
+      }
+        System.out.println("es un tipo de cliente ");
+        
+    }
+    @Override
+    public void imprimircliente()
+    {
+        
+        System.out.println("Frecuencia de compras: "+frecuencia_Compras+"Expiracion: "+expiracion);
     }
 }
