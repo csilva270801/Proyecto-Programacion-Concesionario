@@ -83,7 +83,7 @@ public class menufinal
           try{
             File objetoArchivos=new File("C:/Users/petoa/carpetas/Pictures/archivo proyecto/Inventario_personal.txt");
             if(objetoArchivos.createNewFile()){
-                JOptionPane.showMessageDialog(null,"Archivo creado con nombre: "+ objetoArchivos.getName());;
+                JOptionPane.showMessageDialog(null,"Archivo creado con nombre: "+ objetoArchivos.getName());
             }else{
                 JOptionPane.showMessageDialog(null,"El archivo ya existe");
             }

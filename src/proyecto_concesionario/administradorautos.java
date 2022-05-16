@@ -45,7 +45,7 @@ public class administradorautos {
      boolean terminar=false;
      JOptionPane.showMessageDialog(null,"Bienvenidos Al Concesionario El buen Vehiculo");
      // creado por Jefferson Javier Avelar Arriaza 
-     //try{
+     try{
      while(!terminar)
      {  
          // Aplicamos el try catch finally para solucionar el error
@@ -165,7 +165,7 @@ public class administradorautos {
                  JOptionPane.showMessageDialog(null,"Accediste a la los datos de inventario Vehiculo");
                  nombre= JOptionPane.showInputDialog("Ingrese el nombre");
                  modelo= JOptionPane.showInputDialog("Ingrese el modelo");
-                 marca= JOptionPane.showInputDialog("Ingrese el modelo");
+                 marca= JOptionPane.showInputDialog("Ingrese el Marca");
                  color= JOptionPane.showInputDialog("Ingrese el color");
                  anho= JOptionPane.showInputDialog("Ingrese el año");
                  km= JOptionPane.showInputDialog("Ingrese el kilometros");
@@ -210,14 +210,14 @@ public class administradorautos {
       
   
     }
-//     }catch(Exception e){
-//        JOptionPane.showMessageDialog(null,"Dato no ingresado");
-//        
-//       }finally{
-//         
-//            JOptionPane.showMessageDialog(null,"Proceso terminado");
-//      
-//    }
+   }catch(Exception e){
+        JOptionPane.showMessageDialog(null,"Dato no ingresado");
+       
+     }finally{
+        
+          JOptionPane.showMessageDialog(null,"Proceso terminado");
+   
+   }
     
     }
     
