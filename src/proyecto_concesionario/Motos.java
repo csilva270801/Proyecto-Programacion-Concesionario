@@ -27,7 +27,7 @@ public class Motos extends Vehiculos
     }
     // Invoca al metodo constructor de la clase padre Vehiculos
     public Motos(){
-        super("Deportiva","Kawasaki","roja","300",2021,50,2500,"Nuevo","Moto",40); 
+        super("Deportiva","Kawasaki","roja","300",2021,"50","2500","Nuevo","Moto",40); 
     }
 
     Motos(String motor, double d) {

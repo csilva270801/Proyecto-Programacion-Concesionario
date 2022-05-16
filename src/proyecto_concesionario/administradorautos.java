@@ -2,6 +2,8 @@ package proyecto_concesionario;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 import proyecto_concesionario.inventario_Empleados;
 import proyecto_concesionario.Vehiculos;
 
@@ -15,38 +17,20 @@ public class administradorautos {
     public static void main(String[] args) 
     {  //llamar metodo del menu
         interfazmenu menuagregar=new interfazmenu ();
+        
         // instanciar la clase inventario_Empleados
         inventario_Empleados infopersonal=new inventario_Empleados();
+        
+        menufinal menu = new menufinal();
+        
         //instanciar la clase inventario_Cliente
         inventario_Cliente clientes= new inventario_Cliente();
+        
         //instanciar la clase Vehiculos
         Vehiculos ventas = new Vehiculos();
-        //crear arreglo de tipo objeto 
-        //inventario_Empleados datosempleados[]= new inventario_Empleados[0];
-        //datosempleados[0]=  new Informacion_personal_Empleado();
-
-       //Informacion_personal_Empleado Informacion_personal_Empleadosss = new Informacion_personal_Empleado();
-       Motos objmotos= new Motos();
-       //variables polimorficas
-       Carros objcarros= new Carros();
-       Vehiculos objdatos[]=new Vehiculos[1];
-       objdatos[0]=objcarros;
-       objdatos[1]=objmotos;
-       objdatos[0].ventatotales();
-       objdatos[1].ventatotales();
-      // cast 
-       Vehiculos conver=(Vehiculos)objdatos[0];
        
-      //inicializar el metodo
-      infopersonal.empleado();
-      System.out.println("--------------------------------------------------------------------------------------------");
-      //llamar al metodo ventas totales el cual trae consigo la suma total y el promedio de las ventas
-     
-      //iniciarlizar el metodo ventatotales que nos da la suma de ventas y el promedio
-      ventas.ventatotales(); 
-      
 
-       
+
      // Arreglo
      Scanner entrada = new Scanner(System.in);
      Scanner c = new Scanner(System.in);
@@ -54,47 +38,32 @@ public class administradorautos {
      //creamos el arreglo
      double[] arreglo={10000,800,25000,50000,30000};
      //imprimimos el arreglo utilizando un for para que imprima todos los datos
-     System.out.println("Ventas actuales:$ ");
-     for (double i: arreglo ){
-         System.out.print(i);
-         System.out.println(" ");
-         
-     }
      //este es el menu en el cual tiene funciones para agregar eliminar ordenar entre otras
      Scanner ent= new Scanner(System.in);
      // inicializamos terminar en false para que cuando sea true finalize el while
+     
      boolean terminar=false;
-     //crear lista
-     List<String> lista= new ArrayList<String>();
-     lista.add("A");
-     lista.add("B");
-     lista.add("C");
-     lista.add("D");
-     lista.add("E");
-     lista.add("F");
-     lista.add("G");
-     lista.add("H");
+     JOptionPane.showMessageDialog(null,"Bienvenidos Al Concesionario El buen Vehiculo");
      // creado por Jefferson Javier Avelar Arriaza 
+     //try{
      while(!terminar)
-     {  // Imprime las opciones que el usuario puede utilizar;
-         char respuesta;
-         System.out.println("Seleccione una opción");
-         System.out.println("A- Agregar ventas nuevas");
-         System.out.println("B- Eliminar alguna venta ");
-         System.out.println("C- Ordenar las ventas");
-         System.out.println("D- busqueda Binaria ");
-         System.out.println("E- Busqueda Secuencial");
-         System.out.println("F- Menu Agregar nuevas Ventas");
-         System.out.println("G- Comparar Marcas");
-         System.out.println("H- Tipos de clientes");
-         System.out.println("I-Ingresar informacion personal empleado");
-         System.out.println("J- Salir");
-         respuesta=ent.next().charAt(0);
+     {  
+         // Aplicamos el try catch finally para solucionar el error
+         
+         // Imprime las opciones que el usuario puede utilizar;
+         
+         char respuesta=(JOptionPane.showInputDialog (null,"--------------------------Menu------------------------"+"\n A)-Agregar ventas nuevas"+"\n B)-Eliminar alguna venta"+"\n C)-Crear Archivo para inventario personal"+"\n D)- Crear Archivo para inventario Cliente"+
+                 "\n E)-Agregar información personal empleado "+"\n F)- menu agregar nuevas ventas"+"\n G)- Agregar datos Al inventario Vehiculos"+"\n H)-Agregar datos Al inventario Clientes "+"\n L Terminar"+"\n M)- crear archivo inventario vehiculos")).charAt(0);
+         
+             
+         
         // el swich ocupara la respuesta que mando el usuario y va inicializar la opcion
         switch(respuesta){
             // en el caso A agregamos datos al arreglo
             case 'A':
+               
                 
+                try{
                 System.out.println("Cuantas ventas nuevas Agregara:$ ");
                 nuevasventas= entrada.nextInt();
                 for(int i=0;i < nuevasventas;i++){
@@ -106,9 +75,14 @@ public class administradorautos {
                  System.out.println(i);
                  System.out.println(" ");
                 }
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null,"Dato Erroneo");
+                    
+                }
              break;
              //en el caso B eliminamos una venta elejida por el usuario
              case 'B':
+                 
                 System.out.println("Ventas Realizadas:$ "); 
                 for(double i: arreglo){
                 System.out.println(i);
@@ -122,93 +96,151 @@ public class administradorautos {
                 System.out.println(" ");
              }
              break;
-             // en el caso C ordenamos el arreglo utilizando el metodo de la burbuja el cual lo ordenara de la venta menor a mayor
+             
              case 'C':
-                 ordBurbuja(arreglo);
-                 System.out.println("Ventas menores a mayores: $");
-                 for (double i : arreglo) {
-                 System.out.print(i);
-                 System.out.println(" ");
-                }
+                 JOptionPane.showMessageDialog(null, "Esta a puto de crear un archivo tipo txt para inventario empleados Presione OK si esta seguro");
+                 menu.creararchivo_Inventario_personal();
+                 
+                
                 break;
-                // en el caso D aremos una busqueda binaria del arreglo
+                
              case 'D':
-               busquedaBinaria(arreglo);
+                 JOptionPane.showMessageDialog(null, "Esta a puto de crear un archivo tipo txt para inventario Cliente Presione OK si esta seguro");
+                 menu.creararchivo_inventario_cliente();
+               
              break;
-             // en el caso E asemos una busqueda secuencial del arreglo para que nos diga la posicion en cual esta la venta buscada
+            
              case 'E':
-               infopersonal.busquedaSecuencial();
-               break;
-             // en el caso F inicializamos un meno para aser y agregar datos a un nuevo arreglo
-             case 'F':
-                 menuagregar.menu();
-                 break;
-              // en el caso G lo que asemos es la variable terminar la ponemos en true para que finalice y el break para que para el while  
-             case 'G':
-                // ventas.compararCalidadMarcas();
-                 break;
-                 case 'H':
-                     int vehiculoscomprados;
-                     System.out.println("Ingrese las nuevas ventas");
-                     vehiculoscomprados= entrada.nextInt();
-                     clientes.tipocliente(vehiculoscomprados);
-                     
-                 break;
-                  case 'I':
-                      double Peso;
+                double Peso;
                       double estatura;
                       String domicilio;
                       double distancia_casa_trabajo;
-                      String estado;
+                      String estados;
+                      // utilizando el try catch para prevenir el error de que el usuario no ingresa un dato o ingresa un String en un numerico
+                      try{
                         System.out.println("Ingrese el peso");
                         Peso= entrada.nextDouble();
                         System.out.println("Ingrese la estatura");
                         estatura= entrada.nextDouble();
                         System.out.println("Ingrese el domicilio");
-                        domicilio= c.next();
+                        domicilio= c.nextLine();
                         System.out.println("Ingrese el La distancia de la casa al trabajo");
                         distancia_casa_trabajo= entrada.nextDouble();
                         System.out.println("Ingrese el estado");
-                        estado= entrada.next();
+                        estados= entrada.nextLine();
                         //Informacion_personal_Empleado datosempleados[]=new Informacion_personal_Empleado[0];
                         
                         
                         //variable polimorfica
                         Informacion_personal_Empleado datosempleado[]= new Informacion_personal_Empleado[1];
-                        datosempleado[0]=new Informacion_personal_Empleado (Peso,estatura,domicilio,distancia_casa_trabajo,estado) ;
+                        datosempleado[0]=new Informacion_personal_Empleado (Peso,estatura,domicilio,distancia_casa_trabajo,estados) ;
                         //datosempleado[1].empleado();
                         //cast
                         System.out.println("Arreglo de un objeto= "+"[ "+"Peso: "+(int)datosempleado[0].getPeso()+", "+"Estatura: "+(int)datosempleado[0].getEstatura()+", "+"Domicilio: "+datosempleado[0].getDomicilio()+", "+"Distancia: "+(float)datosempleado[0].getDistancia_casa_trabajo()+", "+"Estado: "+datosempleado[0].getEstado()+" ]");
+                      }catch(Exception e){
+                          
+                          JOptionPane.showMessageDialog(null,"Dato Erroneo");
+                          terminar=true;
+                      }finally{
+                          String reiniciar;
+                          reiniciar= JOptionPane.showInputDialog("Ingresa ---si---- si quieres volvel al menu o cualquier letra si quieres que finalize el programa");
+                          if("si".equals(reiniciar)){
+                              terminar=false;
+                          }else{
+                              terminar=true;
+                          }
+                      }
                       
-                        break;
-             case 'J':
-               terminar=true;
+                 
                break;
+             // en el caso F inicializamos un menu para aser y agregar datos a un nuevo arreglo
+             case 'F':
+                //ventas.existencias(); 
+                menuagregar.menu();
+                break;
+              // en el caso G Ingresamos los datos para guardarlos en el archivo txt.  
+             case 'G':
+                 
+                 String nombre  , modelo,marca , color , km ,precio, estado,tipo,anho;
+                 JOptionPane.showMessageDialog(null,"Accediste a la los datos de inventario Vehiculo");
+                 nombre= JOptionPane.showInputDialog("Ingrese el nombre");
+                 modelo= JOptionPane.showInputDialog("Ingrese el modelo");
+                 marca= JOptionPane.showInputDialog("Ingrese el modelo");
+                 color= JOptionPane.showInputDialog("Ingrese el color");
+                 anho= JOptionPane.showInputDialog("Ingrese el año");
+                 km= JOptionPane.showInputDialog("Ingrese el kilometros");
+                 precio= JOptionPane.showInputDialog("Ingrese el precio");
+                 estado= JOptionPane.showInputDialog("Ingrese el estado");
+                 tipo= JOptionPane.showInputDialog("Ingrese el Tipo de vehiculo");
+
+                 ventas.agregardatos_vehiculos(nombre,modelo,marca,color,anho,km,precio,estado,tipo);
+                 
+                 break;
+                 // metodo tipo cliente
+                 case 'H':
+                     int vehiculoscomprados;
+                     System.out.println("Ingrese las nuevas ventas");
+                     vehiculoscomprados= entrada.nextInt();
+                     clientes.tipocliente(vehiculoscomprados);
+                       
+                     
+                 break;
+                  case 'I':
+                      //variables polimorficas
+                  Carros objcarros= new Carros();
+                   Vehiculos objdatos[]=new Vehiculos[1];
+                   objdatos[0]=objcarros;
+                   objdatos[0].ventatotales();
+                   //cast 
+                    Vehiculos conver=(Vehiculos)objdatos[0];
+                   // terminar el programa
+                  case 'L':
+                      
+                      terminar=true;
+                        break;
+                        // crear archivo para el inventario vehiculo o validar si ya esta creado
+                  case 'M':
+                      ventas.creararchivovehiculo();
+                      break;
+                      
                
                                 
         }
+        
+      
   
     }
+//     }catch(Exception e){
+//        JOptionPane.showMessageDialog(null,"Dato no ingresado");
+//        
+//       }finally{
+//         
+//            JOptionPane.showMessageDialog(null,"Proceso terminado");
+//      
+//    }
     
     }
+    
+    
     // Creado por Jefferson Javier Avelar Arriaza
     public static double[] ordBurbuja(double[] arreglo)
-  {
-   int n = arreglo.length;
-   for (int i = 0; i < n - 1; i++) {
-   for (int j = 0; j < n-i-1; j++) {
-   //Verifica que el elemento de a[j] es mayor que a[j+1] para hacer un cambio
-   if (arreglo[j] > arreglo[j+1])
-  {
-    // cambia a[j+1] y a[j]
-    double temp = arreglo[j];
-    arreglo[j] = arreglo[j+1];
-    arreglo[j+1] = temp;
- }
- }
- }
- return arreglo;
- }
+    {
+     int n = arreglo.length;
+      for (int i = 0; i < n - 1; i++) {
+      for (int j = 0; j < n-i-1; j++) {
+     //Verifica que el elemento de a[j] es mayor que a[j+1] para hacer un cambio
+     if (arreglo[j] > arreglo[j+1])
+     {
+     // cambia a[j+1] y a[j]
+     double temp = arreglo[j];
+     arreglo[j] = arreglo[j+1];
+     arreglo[j+1] = temp;
+     }
+              }
+       }
+   return arreglo;
+    }
+   
     // Creado por César Eduardo Silva Colocho
     public static int busquedaBinaria(double[]arreglo)
     {
@@ -228,6 +260,7 @@ public class administradorautos {
         else bajo = central +1;
         }
         return -1;
-    }
+        }
      
+  
 }

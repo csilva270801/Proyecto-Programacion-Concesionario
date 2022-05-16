@@ -1,7 +1,9 @@
 package proyecto_concesionario;
 
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class inventario_Empleados {
 
@@ -161,5 +163,41 @@ public class inventario_Empleados {
         }
         System.out.println("El dato esta en la posicion: "+posicion);
     }
+    public void agregardatos_empleados(String nombre, String apellido ,String dui ,String fechaventa, String edad, String ventas ,String codigo ,String sueldo){
+     try{
+        FileWriter fw = new FileWriter("C:/Users/petoa/carpetas/Pictures/archivo proyecto/Inventario_personal.txt",true);
+        fw.write("Nombre:");
+        fw.write(nombre);
+        fw.write(" , ");
+        fw.write("Apellido:");
+        fw.write(apellido);
+        fw.write(" , ");
+        fw.write("DUI:");
+        fw.write(dui);
+        fw.write(" , ");
+        fw.write("Fecha venta:");
+        fw.write(fechaventa);
+        fw.write(" , ");
+        fw.write("Edad:");
+        fw.write(edad);
+        fw.write(" , ");
+        fw.write("Ventas:");
+        fw.write(ventas);
+        fw.write(" , ");
+        fw.write("Codigo:");
+        fw.write(codigo);
+        fw.write(" , ");
+        fw.write("Sueldo:");
+        fw.write(sueldo);
+        fw.write("\n");
+        fw.close();
+        JOptionPane.showMessageDialog(null,"Se han guardado los datos Correctamente");
+     } catch(Exception e){
+         JOptionPane.showMessageDialog(null,"Ocurrio un Error al registrar");
+         
+     }
+        
+     
+     }
 
 }

@@ -1,5 +1,6 @@
 
 package proyecto_concesionario;
+import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -14,8 +15,8 @@ public class interfazmenu
     int opcion;
     // Jefferson Javier Avelar Arriaza
     public void menu()
-    {
-        
+    {   
+        JOptionPane.showMessageDialog(null,"Bienvenidos Al Concesionario El buen Vehiculo");
         opcion = Integer.parseInt(JOptionPane.showInputDialog("Menu\n\n1)-Ingresar\n2)-Mostrar\n3)-" + "Modificar\n4)-Eliminar\n5)-Salir"));
         
         switch(opcion)
@@ -33,7 +34,7 @@ public class interfazmenu
             break;
             
             case 4:
-                eliminar();// inicializa el metodo eliminar
+                
             break;
             
             case 5:
@@ -90,5 +91,5 @@ public class interfazmenu
             menu();
         }
     }
-    
+   
 }

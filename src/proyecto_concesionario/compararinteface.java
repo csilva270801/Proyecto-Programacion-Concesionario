@@ -18,6 +18,7 @@ public class compararinteface implements comparar
     @Override
     public void arreglo() 
     {
+        
         double[] arreglo1 = {500, 30000.75, 60000, 9600.66, 1500, 1250.99, 9000.99, 800000, 2300, };
         
         System.out.println("Arreglo antes de modificar");
@@ -27,15 +28,15 @@ public class compararinteface implements comparar
         }
         
         Scanner lector = new Scanner(System.in);
-        System.out.println("Cuantas notas desea agregar: ");
+        System.out.println("Cuantas ventas desea agregar: ");
         int lim = lector.nextInt();
         
         for(int i=0;i < lim;i++){
-        System.out.println("Digite la nota que sea agregar: ");
+        System.out.println("Digite la venta que sea agregar: ");
         arreglo1 [i] = lector.nextDouble();
         }
         
-        System.out.println("En que posicion se encuentra la nota que desea eliminar: ");
+        System.out.println("En que posicion se encuentra la venta que desea eliminar: ");
         int elim = lector.nextInt();
         arreglo1 [elim] = 0;
 

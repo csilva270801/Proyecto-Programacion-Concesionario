@@ -21,7 +21,7 @@ public class Carros extends Vehiculos
     // Invoca al metodo constructor de la clase padre Vehiculos
     public Carros()
     {
-        super("Sedan","Toyota","Gris","Corrolla",2019,100,45385,"Nuevo","Carro",25);
+        super("Sedan","Toyota","Gris","Corrolla",2019,"100","45385","Nuevo","Carro",25);
     }
 
     Carros(String honda, int i, double d) {
@@ -47,9 +47,9 @@ public class Carros extends Vehiculos
     //Metodo para obtener el precio total
     public void precio_total()
     {
-        double precio=this.getPrecio();
+        String precio=this.getPrecio();
         int cantidad=this.getCantidad();
-        total_precio=precio*cantidad;
+        total_precio=cantidad;
         System.out.println("El precio total de los veiculos "+this.getNombre()+" es de "+total_precio+"con su codigo "+this.getCodigo());
     }
     //Metodo para obtener una oferta por comprar vehiculos tipo sedan
@@ -59,9 +59,9 @@ public class Carros extends Vehiculos
         if("Sedan".equals(modeloveiculo))
         {
             double descuentototal;
-            double precioveiculo =this.getPrecio();
+            String precioveiculo =this.getPrecio();
             
-           descuentototal=precioveiculo*0.05;
+           descuentototal=300*0.05;
            System.out.println("El descuento por comprar un carro tipo sedan es $ "+descuentototal);
         }else{
             System.out.println("solo los veiculos tipo sedan tienen descuento");
