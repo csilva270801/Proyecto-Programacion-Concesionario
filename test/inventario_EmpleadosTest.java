@@ -22,7 +22,7 @@ public class inventario_EmpleadosTest {
     //
     // @Test
     // public void hello() {}
-    //prueva positiva
+    //prueva positiva  
     @Test
     public void testVentas()
     {
