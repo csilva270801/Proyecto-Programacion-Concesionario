@@ -11,7 +11,7 @@ package interfaz_Grafica;
 public class Ventana extends javax.swing.JFrame {
 
     /**
-     * Creates new form Ventana
+     * Creates new form Ventana  
      */
     public Ventana() {
         initComponents();
@@ -70,7 +70,7 @@ public class Ventana extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 90, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 90, -1));
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N

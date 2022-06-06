@@ -1,4 +1,5 @@
 package proyecto_concesionario;
+import interfaz_Grafica.Ventana;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,7 +16,11 @@ import proyecto_concesionario.Vehiculos;
 public class administradorautos {
 
     public static void main(String[] args) 
+            
     {  //llamar metodo del menu
+        Ventana v1 = new Ventana();
+        
+        
         interfazmenu menuagregar=new interfazmenu ();
         
         // instanciar la clase inventario_Empleados
@@ -45,7 +50,15 @@ public class administradorautos {
      boolean terminar=false;
      JOptionPane.showMessageDialog(null,"Bienvenidos Al Concesionario El buen Vehiculo");
      // creado por Jefferson Javier Avelar Arriaza 
-     try{
+     char respues=(JOptionPane.showInputDialog (null, "Ingresa A si quieres el menu En forma ventana \n Ingresa B si quieres el menu forma panel ")).charAt(0);
+     switch(respues){
+        case 'A':
+        v1.setVisible(true);
+        break;
+       
+        case 'B':
+            
+            try{
      while(!terminar)
      {  
          // Aplicamos el try catch finally para solucionar el error
@@ -99,7 +112,7 @@ public class administradorautos {
              
              case 'C':
                  JOptionPane.showMessageDialog(null, "Esta a puto de crear un archivo tipo txt para inventario empleados Presione OK si esta seguro");
-                 menu.creararchivo_Inventario_personal();
+                // infopersonal.creararchivo_Inventario_personal();
                  
                 
                 break;
@@ -173,7 +186,7 @@ public class administradorautos {
                  estado= JOptionPane.showInputDialog("Ingrese el estado");
                  tipo= JOptionPane.showInputDialog("Ingrese el Tipo de vehiculo");
 
-                 ventas.agregardatos_vehiculos(nombre,modelo,marca,color,anho,km,precio,estado,tipo);
+
                  
                  break;
                  // metodo tipo cliente
@@ -210,6 +223,7 @@ public class administradorautos {
       
   
     }
+    
    }catch(Exception e){
         JOptionPane.showMessageDialog(null,"Dato no ingresado");
        
@@ -218,6 +232,10 @@ public class administradorautos {
           JOptionPane.showMessageDialog(null,"Proceso terminado");
    
    }
+            
+      break;      
+    }
+     
     
     }
     

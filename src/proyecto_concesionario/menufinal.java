@@ -56,42 +56,18 @@ public class menufinal
              
          
                 
-       public void creararchivo_inventario_cliente()
-       {
-          
-            
+   public void creararchivo_inventario_cliente()
+   { 
             try{
-            File objetoArchivo=new File("C:/Users/petoa/carpetas/Pictures/archivo proyecto/Inventario_cliente.txt");
+                File objetoArchivo=new File("C:/Users/petoa/carpetas/Pictures/archivo proyecto/Inventario_cliente.txt");
             if(objetoArchivo.createNewFile()){
                 JOptionPane.showMessageDialog(null,"Archivo creado con nombre: "+ objetoArchivo.getName());
 
             }else{
                 JOptionPane.showMessageDialog(null,"El archivo ya existe");
             }
-         } catch (Exception e){
-            JOptionPane.showMessageDialog(null,"Ocurrio un Error Al crear el archivo");
-
-           }
-
-           
-            
-           
-    
-       }
-       public void creararchivo_Inventario_personal()
-       {
-          try{
-            File objetoArchivos=new File("C:/Users/petoa/carpetas/Pictures/archivo proyecto/Inventario_personal.txt");
-            if(objetoArchivos.createNewFile()){
-                JOptionPane.showMessageDialog(null,"Archivo creado con nombre: "+ objetoArchivos.getName());
-            }else{
-                JOptionPane.showMessageDialog(null,"El archivo ya existe");
-            }
-         } catch (Exception e){
-            JOptionPane.showMessageDialog(null,"Ocurrio un Error Al crear el archivo");
-            
-           }
-    
-       }
-      
+            } catch (Exception e){
+                JOptionPane.showMessageDialog(null,"Ocurrio un Error Al crear el archivo");
+        }
+    }    
 }
