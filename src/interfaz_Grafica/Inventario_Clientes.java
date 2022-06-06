@@ -358,6 +358,17 @@ public class Inventario_Clientes extends javax.swing.JFrame {
 
     private void btnSeleccionarDatos_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarDatos_clientesActionPerformed
         // TODO add your handling code here:
+        objclientes.seleccionar_datos(TablaClientes);
+        txtNombre.setText(objclientes.getNombres());
+        txtApellido.setText(objclientes.getApellidos());
+        txtDUI.setText(objclientes.getDui());
+        txtCorreo.setText(objclientes.getCorreo());
+        txtFechaCompra.setText(objclientes.getFecha_compra());
+        txtPago.setText(objclientes.getPago());
+        txtVehiculosComprados.setText(objclientes.getVehivulos_Comprados1());
+        txtCodigoProducto.setText(objclientes.getCodigo_producto1());
+        txtComprasTotales.setText(objclientes.getCompras_totales1());
+        
     }//GEN-LAST:event_btnSeleccionarDatos_clientesActionPerformed
 
     private void btnLimpiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiar1ActionPerformed
